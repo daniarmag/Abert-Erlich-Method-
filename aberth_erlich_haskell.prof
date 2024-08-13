@@ -1,0 +1,75 @@
+	Tue Aug 13 10:01 2024 Time and Allocation Profiling Report  (Final)
+
+	   aberth_erlich_haskell.exe +RTS -p -RTS ghc
+
+	total time  =       10.41 secs   (10408 ticks @ 1000 us, 1 processor)
+	total alloc = 744,318,117,136 bytes  (excludes profiling overheads)
+
+COST CENTRE    MODULE SRC                                      %time %alloc
+
+polyval        Main   aberth_erlich_haskell.hs:(20,1)-(26,38)   54.6   63.6
+sums           Main   aberth_erlich_haskell.hs:59:1-88          24.6    3.6
+polyval.powers Main   aberth_erlich_haskell.hs:26:5-38          19.0   32.7
+
+
+                                                                                                                             individual      inherited
+COST CENTRE                            MODULE                   SRC                                       no.     entries  %time %alloc   %time %alloc
+
+MAIN                                   MAIN                     <built-in>                                171           0    0.0    0.0   100.0  100.0
+ CAF                                   Text.Read.Lex            <entire-module>                           322           0    0.0    0.0     0.0    0.0
+ CAF                                   Text.Printf              <entire-module>                           320           0    0.0    0.0     0.0    0.0
+ CAF                                   GHC.Read                 <entire-module>                           298           0    0.0    0.0     0.0    0.0
+ CAF                                   GHC.IO.StdHandles        <entire-module>                           283           0    0.0    0.0     0.0    0.0
+ CAF                                   GHC.IO.Handle.Internals  <entire-module>                           278           0    0.0    0.0     0.0    0.0
+ CAF                                   GHC.IO.Handle.FD         <entire-module>                           277           0    0.0    0.0     0.0    0.0
+ CAF                                   GHC.IO.FD                <entire-module>                           275           0    0.0    0.0     0.0    0.0
+ CAF                                   GHC.IO.Exception         <entire-module>                           274           0    0.0    0.0     0.0    0.0
+ CAF                                   GHC.IO.Encoding.CodePage <entire-module>                           265           0    0.0    0.0     0.0    0.0
+ CAF                                   GHC.IO.Encoding          <entire-module>                           264           0    0.0    0.0     0.0    0.0
+ CAF                                   GHC.Float                <entire-module>                           252           0    0.0    0.0     0.0    0.0
+ CAF                                   Debug.Trace              <entire-module>                           214           0    0.0    0.0     0.0    0.0
+ CAF                                   Data.Fixed               <entire-module>                           195           0    0.0    0.0     0.0    0.0
+ CAF                                   Main                     <entire-module>                           178           0    0.0    0.0     0.0    0.0
+  main                                 Main                     aberth_erlich_haskell.hs:(106,1)-(118,70) 342           1    0.0    0.0     0.0    0.0
+   main.epsilon                        Main                     aberth_erlich_haskell.hs:109:9-22         380           1    0.0    0.0     0.0    0.0
+   main.maxTries                       Main                     aberth_erlich_haskell.hs:108:9-22         381           1    0.0    0.0     0.0    0.0
+   main.abertErlichRoots               Main                     aberth_erlich_haskell.hs:113:9-66         361           0    0.0    0.0     0.0    0.0
+    abertErlich                        Main                     aberth_erlich_haskell.hs:(77,1)-(92,47)   362           0    0.0    0.0     0.0    0.0
+     abertErlich.abertErlich'          Main                     aberth_erlich_haskell.hs:(79,5)-(92,47)   363           0    0.0    0.0     0.0    0.0
+      abertErlich.abertErlich'.w       Main                     aberth_erlich_haskell.hs:81:11-44         364           0    0.0    0.0     0.0    0.0
+       getOffsets                      Main                     aberth_erlich_haskell.hs:(64,1)-(72,10)   365           0    0.0    0.0     0.0    0.0
+        getOffsets.calcSigma           Main                     aberth_erlich_haskell.hs:67:7-28          366           0    0.0    0.0     0.0    0.0
+         sums                          Main                     aberth_erlich_haskell.hs:59:1-88          367           0    0.0    0.0     0.0    0.0
+ main                                  Main                     aberth_erlich_haskell.hs:(106,1)-(118,70) 343           0    0.0    0.0   100.0  100.0
+  main.\                               Main                     aberth_erlich_haskell.hs:115:21-73        383         996    0.0    0.0     0.0    0.0
+  main.abertErlichRoots                Main                     aberth_erlich_haskell.hs:113:9-66         349           1    0.0    0.0   100.0  100.0
+   abertErlich                         Main                     aberth_erlich_haskell.hs:(77,1)-(92,47)   350           1    0.0    0.0   100.0  100.0
+    abertErlich.abertErlich'           Main                     aberth_erlich_haskell.hs:(79,5)-(92,47)   351         851    0.0    0.0   100.0  100.0
+     abertErlich.abertErlich'.debugMsg Main                     aberth_erlich_haskell.hs:87:11-55         352         851    1.0    0.0     1.0    0.0
+     abertErlich.abertErlich'.maxW     Main                     aberth_erlich_haskell.hs:86:11-42         353         851    0.1    0.0     0.1    0.0
+     abertErlich.abertErlich'.roots'   Main                     aberth_erlich_haskell.hs:83:11-45         382         851    0.0    0.0     0.0    0.0
+     abertErlich.abertErlich'.w        Main                     aberth_erlich_haskell.hs:81:11-44         354         851    0.0    0.0    98.9  100.0
+      getOffsets                       Main                     aberth_erlich_haskell.hs:(64,1)-(72,10)   355         851    0.0    0.0    98.9  100.0
+       getOffsets.calcSigma            Main                     aberth_erlich_haskell.hs:67:7-28          359         851    0.0    0.0    24.6    3.6
+        sums                           Main                     aberth_erlich_haskell.hs:59:1-88          360         851   24.6    3.6    24.6    3.6
+       getOffsets.denominator          Main                     aberth_erlich_haskell.hs:69:7-69          358         851    0.0    0.0     0.0    0.0
+        getOffsets.denominator.\       Main                     aberth_erlich_haskell.hs:69:38-48         379      847596    0.0    0.0     0.0    0.0
+       getOffsets.numerator            Main                     aberth_erlich_haskell.hs:66:7-43          356         851    0.1    0.0    74.1   96.3
+        divide                         Main                     aberth_erlich_haskell.hs:(32,1)-(36,79)   372      847596    0.4    0.0    74.0   96.3
+         polyval                       Main                     aberth_erlich_haskell.hs:(20,1)-(26,38)   373     1695192   54.6   63.6    73.6   96.2
+          polyval.toComplex            Main                     aberth_erlich_haskell.hs:23:5-24          375  1689258828    0.0    0.0     0.0    0.0
+          polyval.powers               Main                     aberth_erlich_haskell.hs:26:5-38          374     1695192   19.0   32.7    19.0   32.7
+       getOffsets.wList                Main                     aberth_erlich_haskell.hs:71:7-47          357         851    0.1    0.0     0.1    0.0
+  main.dp                              Main                     aberth_erlich_haskell.hs:111:9-25         376           1    0.0    0.0     0.0    0.0
+   derivative                          Main                     aberth_erlich_haskell.hs:(9,1)-(15,37)    377         997    0.0    0.0     0.0    0.0
+    derivative.p'                      Main                     aberth_erlich_haskell.hs:15:5-37          378         996    0.0    0.0     0.0    0.0
+  main.duration                        Main                     aberth_erlich_haskell.hs:117:9-40         384           1    0.0    0.0     0.0    0.0
+  main.roots                           Main                     aberth_erlich_haskell.hs:112:9-27         346           1    0.0    0.0     0.0    0.0
+   initRoots                           Main                     aberth_erlich_haskell.hs:(48,1)-(53,16)   347           1    0.0    0.0     0.0    0.0
+    eulerEquation                      Main                     aberth_erlich_haskell.hs:(41,1)-(44,25)   368         996    0.0    0.0     0.0    0.0
+     eulerEquation.imagPart            Main                     aberth_erlich_haskell.hs:43:7-30          371         996    0.0    0.0     0.0    0.0
+     eulerEquation.realPart            Main                     aberth_erlich_haskell.hs:42:7-30          369         996    0.0    0.0     0.0    0.0
+    initRoots.n                        Main                     aberth_erlich_haskell.hs:53:5-16          348           1    0.0    0.0     0.0    0.0
+    initRoots.r                        Main                     aberth_erlich_haskell.hs:52:5-65          370           1    0.0    0.0     0.0    0.0
+  readFileToList                       Main                     aberth_erlich_haskell.hs:(96,1)-(101,18)  344           1    0.0    0.0     0.0    0.0
+   readFileToList.numbers              Main                     aberth_erlich_haskell.hs:100:9-55         345           1    0.0    0.0     0.0    0.0
